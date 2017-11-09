@@ -10,6 +10,7 @@
         <title></title>
         <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
         <link rel="stylesheet" type="text/css" href="css/main.css">        
         <link rel="shortcut icon" type="image/x-icon" href="">
@@ -17,11 +18,32 @@
     </head>
     <body>
         <div class="container">
+            <div id="headerBox" class="deep-purple darken-2">
+                <h1 class="white-text">MOVIE API.</h1>
+            </div>
+            <div id="searchBox" class="white">
+                <div class="row center-align">
+                    <div class="col s2">
+                    </div>
+                    <div class="input-field col s6">
+                        <i class="material-icons prefix">search</i>
+                        <input id="searchValue" type="text" class="validate">
+                        <label for="searchValue">Movie Name</label>
+                    </div>
+                    <div class="input-field col s2">
+                        <button class="waves-effect waves-light deep-purple darken-2 btn">Search</button>
+                    </div>
+                    <div class="col s2">
+                    </div>
+                </div>
+            </div>
         </div>
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
         <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+        <script src="js/templates.js"></script>
+        <script src="js/app.js"></script>
     </body>
 </html>
