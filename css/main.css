@@ -8,17 +8,18 @@ body {
     text-align: center;
     width: 75%;
     margin: auto auto;
-    margin-top: 30px;
+    margin-top: 40px;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
 }
 
 #searchBox {
     width: 75%;
     margin: auto auto;
-    margin-top: 30px;
     box-sizing: border-box;
-    padding-top: 20px;
-    padding-bottom: 10px;
-    border-radius: 10px;
+    padding: 30px 20px 10px 20px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
 }
 
 #searchValue {
@@ -32,4 +33,29 @@ body {
 
 .input-field .prefix.active {
     color: #512DA8;
+}
+
+#dataContainer {
+    margin-top: 50px;
+}
+
+#shorMovies, #fullMovie {
+    display: none;
+}
+
+.card-movie {
+    margin-bottom: 20px;
+}
+
+.fa-star {
+    color: #E4BB24;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
