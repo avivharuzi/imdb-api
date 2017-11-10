@@ -47,6 +47,10 @@ body {
     display: none;
 }
 
+#search, #back {
+    width: 100%;
+}
+
 .card-movie {
     margin-bottom: 20px;
 }

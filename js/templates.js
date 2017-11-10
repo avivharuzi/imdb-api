@@ -9,7 +9,7 @@ function shortMovieTemplate(data) {
         }
 
         output +=
-        `<div class="col l3 m4 s12 card-movie">
+        `<div class="col l3 m6 s12 card-movie">
             <div class="card">
                 <div class="card-image">
                     <img src="${value.Poster}" height="450px" alt="N/A">
@@ -36,15 +36,15 @@ function fullMovieTemplate(data) {
         <div class="col s12 card-movie">
             <div class="card">
                 <div class="row">
-                    <div class="col s4">
+                    <div class="col l4 s12">
                         <div class="card-image">
                             <img src="${data.Poster}" width="200" height="auto" alt="N/A">
                         </div>
                     </div>
-                    <div class="col s8">
+                    <div class="col l8 s12">
                         <div class="card-content">
                             <div class="row">
-                                <div class="col s10">
+                                <div class="col l9 s12">
                                     <h1 class="flow-text grey-text text-darken-4">${data.Title} (${data.Year}) (${data.Type.capitalize()})
                                     <br><br><span><i class="fa fa-star"></i> ${data.imdbRating}<br><br>${data.imdbVotes} Votes</span></h1>
                                     <p>${data.Runtime} | ${data.Genre} | ${data.Released} (${data.Country})</p>
@@ -59,7 +59,7 @@ function fullMovieTemplate(data) {
                                     </p>
                                     <p class="section">${data.Plot}</p>
                                 </div>
-                                <div class="col s2 flow-text">
+                                <div class="col l3 s12 flow-text">
                                     <button class="waves-effect waves-light btn blue" id="back">BACK</button>
                                 </div>
                             </div>
