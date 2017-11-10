@@ -7,10 +7,13 @@ const FULL_MOVIE = $("#fullMovie");
 const SHORT_MOVIES = $("#shortMovies");
 
 $(function () {
+    $("select").material_select();
+
     $("#search").on("click", function () {
         let searchValue = $("#searchValue").val();
+        let searchBy = $("#searchBy").val();
         FULL_MOVIE.fadeOut();
-        getAllData(searchValue);
+        getAllData(searchValue, searchBy);
     });
 
     SHORT_MOVIES.on("click", ".read-more", function () {
@@ -25,15 +28,19 @@ $(function () {
     });;
 });
 
-function getAllData(searchValue) {
-    let finallyUrl = API_URL + API_KEY + "&type=movie&s=" + searchValue;
+function getAllData(searchValue, searchBy) {
+    let finallyUrl = API_URL + API_KEY + searchBy + "&s=" + searchValue;
 
     $.ajax({
         method: "GET",
         url: finallyUrl,
         ajaxStart: NProgress.start(),
         success: function (data, success, response) {
-            shortMovieTemplate(data.Search);
+            if (data.Response !== "False") {
+                shortMovieTemplate(data.Search);
+            } else {
+                errorSearchTemplate();
+            }
         },
         ajaxStop: NProgress.done()
     });
@@ -48,7 +55,12 @@ function getDataById(id) {
         ajaxStart: NProgress.start(),
         success: function (data, success, response) {
             fullMovieTemplate(data);
+            console.log(data);
         },
         ajaxStop: NProgress.done()
     });
+}
+
+String.prototype.capitalize = function() {
+    return this.charAt(0).toUpperCase() + this.slice(1);
 }
