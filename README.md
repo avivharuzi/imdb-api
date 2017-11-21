@@ -1,2 +1,2 @@
 # imdb-api
-Search for movies you like
+search for movies you like
