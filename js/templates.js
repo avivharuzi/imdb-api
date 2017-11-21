@@ -9,7 +9,7 @@ function shortMovieTemplate(data) {
         }
 
         output +=
-        `<div class="col l3 m6 s12 card-movie">
+        `<div class="col l3 m6 s12 card-movie short-movie">
             <div class="card">
                 <div class="card-image">
                     <img src="${value.Poster}" height="450px" alt="N/A">
