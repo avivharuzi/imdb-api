@@ -43,7 +43,7 @@ body {
     margin-top: 50px;
 }
 
-#shorMovies, #fullMovie {
+#shortImdb, #fullImdb {
     display: none;
 }
 
@@ -51,7 +51,7 @@ body {
     width: 100%;
 }
 
-.card-movie {
+.card-imdb {
     margin-bottom: 20px;
 }
 

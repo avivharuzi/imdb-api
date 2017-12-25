@@ -3,8 +3,8 @@
 const API_URL = "https://www.omdbapi.com/?apikey=";
 const API_KEY = "4e4e188f";
 const DATA_CONTAINER = $("#mainContainer");
-const FULL_MOVIE = $("#fullMovie");
-const SHORT_MOVIES = $("#shortMovies");
+const FULL_IMDB = $("#fullImdb");
+const SHORT_IMDB = $("#shortImdb");
 
 $(function () {
     $("select").material_select();
@@ -12,19 +12,19 @@ $(function () {
     $("#search").on("click", function () {
         let searchValue = $("#searchValue").val();
         let searchBy = $("#searchBy").val();
-        FULL_MOVIE.fadeOut();
+        FULL_IMDB.fadeOut();
         getAllData(searchValue, searchBy);
     });
 
-    SHORT_MOVIES.on("click", ".read-more", function () {
+    SHORT_IMDB.on("click", ".read-more", function () {
         let id = $(this).val();
-        SHORT_MOVIES.fadeOut();
+        SHORT_IMDB.fadeOut();
         getDataById(id);
     });
 
-    FULL_MOVIE.on("click", "#back", function () {
-        FULL_MOVIE.fadeOut();
-        SHORT_MOVIES.fadeIn();
+    FULL_IMDB.on("click", "#back", function () {
+        FULL_IMDB.fadeOut();
+        SHORT_IMDB.fadeIn();
     });
 });
 
@@ -36,8 +36,8 @@ function getAllData(searchValue, searchBy) {
         url: FINALLE_URL,
         success: function (data, success, response) {
             if (data.Response !== "False") {
-                shortMovieTemplate(data.Search);
-                equalHeight($(".short-movie"));
+                shortImdbTemplate(data.Search);
+                equalHeight($(".short-imdb"));
             } else {
                 errorSearchTemplate();
             }
@@ -47,26 +47,26 @@ function getAllData(searchValue, searchBy) {
 
 function getDataById(id) {
     const FINALLE_URL = API_URL + API_KEY + "&type=movie&plot=short&i=" + id;
-    
+
     $.ajax({
         method: "GET",
         url: FINALLE_URL,
         success: function (data, success, response) {
-            fullMovieTemplate(data);
-            console.log(data);
+            fullImdbTemplate(data);
         }
     });
 }
 
 function equalHeight(group) {
     let tallest = 0;
-    
+
     group.each(function() {
         let thisHeight = $(this).height();
         if (thisHeight > tallest) {
             tallest = thisHeight;
         }
     });
+    
     group.height(tallest);
 }
 

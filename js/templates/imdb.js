@@ -1,15 +1,15 @@
 "use strict";
 
-function shortMovieTemplate(data) {
+function shortImdbTemplate(data) {
     let output = `<div class="row">`;
 
     $(data).each(function (index, value) {
         if (value.Poster === "N/A") {
-            value.Poster = "images/no-image.png";
+            value.Poster = "images/defaults/no-image.png";
         }
 
         output +=
-        `<div class="col l3 m6 s12 card-movie short-movie">
+        `<div class="col l3 m6 s12 card-imdb short-imdb">
             <div class="card">
                 <div class="card-image">
                     <img src="${value.Poster}" height="450px" alt="N/A">
@@ -23,17 +23,17 @@ function shortMovieTemplate(data) {
         </div>`;
     });
     output += `</div>`;
-    SHORT_MOVIES.html(output).fadeIn();
+    SHORT_IMDB.html(output).fadeIn();
 }
 
-function fullMovieTemplate(data) {
+function fullImdbTemplate(data) {
     if (data.Poster === "N/A") {
-        data.Poster = "images/no-image.png";
+        data.Poster = "images/defaults/no-image.png";
     }
 
     let output =
     `<div class="row">
-        <div class="col s12 card-movie">
+        <div class="col s12 card-imdb">
             <div class="card">
                 <div class="row">
                     <div class="col l4 s12">
@@ -69,7 +69,7 @@ function fullMovieTemplate(data) {
             </div>
         </div>
     </div>`;
-    FULL_MOVIE.html(output).fadeIn();
+    FULL_IMDB.html(output).fadeIn();
 }
 
 function errorSearchTemplate() {
@@ -83,5 +83,5 @@ function errorSearchTemplate() {
             </div>
         </div>
     </div>`;
-    SHORT_MOVIES.html(output).fadeIn();
+    SHORT_IMDB.html(output).fadeIn();
 }
