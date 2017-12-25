@@ -1,6 +1,6 @@
 "use strict";
 
-const API_URL = "http://www.omdbapi.com/?apikey=";
+const API_URL = "https://www.omdbapi.com/?apikey=";
 const API_KEY = "4e4e188f";
 const DATA_CONTAINER = $("#mainContainer");
 const FULL_MOVIE = $("#fullMovie");
