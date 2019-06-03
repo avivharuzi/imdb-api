@@ -1,2 +1,3 @@
-# imdb-api
-search for movies and series you like
+# IMDB API
+
+Search for movies and series you like.
